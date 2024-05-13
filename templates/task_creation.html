@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="utf-8" />
+
+        <meta name="viewport" content="width-device-width, initial-scale=1, maximum-scale=1"/>
+
+        <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/solar/bootstrap.min.css">
+
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+
+        <title> view tasks </title>
+
+    </head>
+    <body>
+        <div class="text-center">
+    
+            <h1> Create tasks here </h1>
+            <form action="/Home/task_creation/" method="post">
+            {% csrf_token %}
+            <label for"">title</label>
+            <br>
+            <input class="" type="text" id="title" name="title" placeholder="Create a title" Required>
+
+            <br> <br>
+
+            <label for"">description</label>
+            <br>
+            <input class="" type="text" id="description" name="description" placeholder="Describe your task" Required>
+            <br> <br>
+            
+
+            <button type"submit"> Create task </button>
+        </div>
+        </form>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"  crossorigin="anonymous"></script>
+
+
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+
+    crossorigin="anonymous">
+
+    </script>
+</html>

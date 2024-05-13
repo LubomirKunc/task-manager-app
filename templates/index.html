@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="utf-8" />
+
+        <meta name="viewport" content="width-device-width, initial-scale=1, maximum-scale=1"/>
+
+        <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/solar/bootstrap.min.css">
+
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+
+        <title> view tasks </title>
+
+    </head>
+    <body>
+        <div class="text-center">
+    
+
+            {% for message in messages%}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show", role="alert">
+            <strong>Message: </strong> {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            {% endfor %}
+
+
+
+            <h1>Welcome to Task Manager</h1>
+
+
+            {% if user.is_authenticated %}
+            <h3>Hello {{ fname }} </h3>
+            <h5>You're successfully logged in</h5>
+            <button type="submit"> <a href="/Logout">Logout</a> </button>
+            <br> <br>
+            <button type="submit"> <a href="/Home">Home</a> </button>
+            {% else %}
+            <button type="submit"> <a href="/Registration/">Registration</a> </button>
+            <br> <br>
+            <button type="submit"> <a href="/Login/">Login</a> </button>
+            {% endif %}
+        </div>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"  crossorigin="anonymous"></script>
+
+
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+
+    crossorigin="anonymous">
+
+    </script>
+</html>
